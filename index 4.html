@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Seyn ✦</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap');
+:root{--navy:#071426;--navy2:#0d2038;--sage:#9caf9a;--gold:#d8b86a;--cream:#f7f1df;--muted:#b8c1c6}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--navy);color:var(--cream);font-family:Montserrat,sans-serif;font-weight:300;overflow-x:hidden}
+section{min-height:100vh;padding:90px 7vw;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.stars,.stars:before,.stars:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.5px);background-size:170px 170px;opacity:.45;animation:drift 35s linear infinite;pointer-events:none}
+.stars:before{background-size:97px 97px;opacity:.25;animation-duration:22s}.stars:after{background-size:250px 250px;opacity:.2;animation-duration:50s}
+@keyframes drift{to{transform:translateY(170px)}} @keyframes twinkle{50%{opacity:.45;transform:scale(.96)}} 
+.content{max-width:1000px;width:100%;position:relative;z-index:2}.center{text-align:center}
+.kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:18px}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500} h1{font-size:clamp(3.5rem,10vw,8rem);line-height:.88;margin:0 0 24px} h2{font-size:clamp(2.6rem,6vw,5rem);margin:0 0 20px} h3{font-size:1.8rem;margin:0 0 8px}
+.subtitle{font-family:Parisienne,cursive;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--sage)}
+.btn{border:1px solid rgba(216,184,106,.7);background:rgba(216,184,106,.08);color:var(--cream);padding:14px 25px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;cursor:pointer;transition:.3s}.btn:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}
+.divider{width:70px;height:1px;background:var(--gold);margin:28px auto}.hint{font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-top:18px}
+.letter{background:rgba(247,241,223,.055);border:1px solid rgba(216,184,106,.28);padding:clamp(28px,6vw,70px);border-radius:4px;box-shadow:0 20px 80px rgba(0,0,0,.25)}
+.letter p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.8;margin:0;white-space:pre-line}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:35px}.card{padding:28px;background:rgba(156,175,154,.08);border:1px solid rgba(156,175,154,.22);border-radius:8px}.card p{color:var(--muted);line-height:1.7;font-size:.9rem}
+.memories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:35px}.photo{aspect-ratio:1/1;background:rgba(255,255,255,.045);border:1px dashed rgba(216,184,106,.4);display:flex;align-items:center;justify-content:center;text-align:center;padding:15px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.photo span{color:var(--muted);font-size:.75rem;letter-spacing:.08em}.caption{padding:10px 3px 0;color:var(--muted);font-size:.8rem;text-align:center}
+.song{display:flex;gap:20px;align-items:center;padding:20px;border-bottom:1px solid rgba(255,255,255,.1)}.disc{width:55px;height:55px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);flex:none}.song strong{font-family:"Cormorant Garamond",serif;font-size:1.35rem}.song small{display:block;color:var(--muted);margin-top:3px}
+.editbox{border:1px solid rgba(216,184,106,.3);background:rgba(0,0,0,.12);padding:28px;border-radius:8px;margin-top:25px}.editbox textarea,.editbox input{width:100%;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.15);color:var(--cream);padding:13px;border-radius:5px;font:inherit;outline:none}.editbox textarea{min-height:170px;resize:vertical}.editbox label{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:15px 0 7px}
+.reveal{opacity:0;transform:translateY(25px);transition:1s}.reveal.show{opacity:1;transform:none}
+#fireworks{position:absolute;inset:0;pointer-events:none}.firework{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:burst 1.8s ease-out forwards}.spark{position:absolute;width:2px;height:70px;background:linear-gradient(var(--gold),transparent);transform-origin:50% 0;animation:spark 1.5s ease-out forwards}
+@keyframes burst{0%{transform:scale(1);opacity:1}100%{transform:scale(45);opacity:0}} @keyframes spark{0%{opacity:1;transform:rotate(var(--a)) scaleY(0)}100%{opacity:0;transform:rotate(var(--a)) translateY(-55px) scaleY(1)}}
+.finalline{font-family:Parisienne,cursive;font-size:clamp(1.8rem,4vw,3rem);color:var(--sage);margin-top:35px}
+footer{text-align:center;padding:20px;color:#71808d;font-size:.65rem;letter-spacing:.1em}
+@media(max-width:600px){section{padding:75px 6vw}.letter p{font-size:1.1rem}.song{gap:13px}}
+
+.caption-edit{width:100%;margin-top:10px;padding:10px 12px;border:1px solid rgba(212,175,55,.35);border-radius:10px;background:rgba(8,15,35,.78);color:#f7f1df;font:500 13px Montserrat,sans-serif;outline:none;box-sizing:border-box}
+.caption-edit:focus{border-color:#d4af37;box-shadow:0 0 0 2px rgba(212,175,55,.12)}
+.song-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid rgba(212,175,55,.14)}
+.song-info{flex:1;min-width:0}
+.song-title{font-family:'Cormorant Garamond',serif;font-size:22px;color:#f7f1df}
+.song-note{margin-top:3px;color:#bfc8bd;font-size:12px;line-height:1.5}
+.song-play{border:1px solid rgba(212,175,55,.55);background:rgba(212,175,55,.08);color:#f4d77b;border-radius:999px;padding:9px 15px;font:600 11px Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.song-play:hover{background:rgba(212,175,55,.16)}
+.audio-status{font-size:11px;color:#9eaa9d;margin-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section id="opening">
+<div class="stars"></div><div class="content center reveal">
+<div class="kicker">December 31, 2026</div>
+<h1 id="openingTitle">Happy 21st Birthday, Seyn</h1>
+<div class="subtitle" id="openingSubtitle">To the person who calms my heart.</div>
+<div class="divider"></div>
+<button class="btn" onclick="startExperience()">✦ Begin ✦</button>
+<div class="hint">turn your sound on ♫</div>
+</div></section>
+
+<section id="letter"><div class="stars"></div><div class="content reveal">
+<div class="kicker">A little something from me</div><h2>For you, Seyn.</h2>
+<div class="letter"><p id="letterText">There’s so many words, yet I can’t seem to find anything that can describe what I feel for you. I love you seems like it’s not enough—it doesn’t capture the entirety of what I feel for you. Poetry can’t even describe how deep, and drowning this feeling is—and I don’t mean that in a bad way, because I know that even if I drown I would never dream or even think about wanting to rise for fresh air—as you are the only one I need to survive. I love you, more than words could ever describe, more than the feeling, more than the fights, more than the kisses, the hugs, and everything else. Because I love only you, with you everything doesn’t seem so bad. Happy 21st Birthday to you my wife, my home, my warmth, my person, the love of my life. I hope this day brings you joy, happiness, and warmth. May your day be as joyful as the color yellow, and not as blue as your favorite color. And once you figure out the dreams you’d like to achieve, may you achieve them with me beside you, I hope your wishes do come true if you have any. Thank you for the joy, warmth, peace, love, and everything that you bring and spread every day. I hope when you change and grow into the best, and better version of yourself I’m still by your side, may you continue to spread the joys and kindness your heart has. 사랑해요 🫶 I love you until the sun loses its light, until the stars stops shining, and until the moon rests its light. Thank you for existing, for your life, for your patience, for loving me. Enjoy your morning, and the rest of the day. 🫶</p></div>
+</div></section>
+
+<section id="reasons"><div class="stars"></div><div class="content reveal"><div class="kicker">A constellation of little things</div><h2>Reasons I Love You</h2><p class="center" style="color:var(--muted)">Click the stars in your imagination—or add your own reasons below.</p><div class="grid" id="reasonGrid"></div>
+<div class="editbox"><label>Add a reason</label><input id="reasonInput" placeholder="Something you love about Seyn..."><button class="btn" style="margin-top:12px" onclick="addReason()">Add ✦</button></div></div></section>
+
+<section id="memories"><div class="stars"></div><div class="content reveal"><div class="kicker">The moments I keep</div><h2>Our Memories</h2><p class="center" style="color:var(--muted)">The memories below are the photos you uploaded to the repository. ♡</p><div class="memories" id="memoryGrid"></div></div></section>
+
+<section id="songs">
+  <div class="section-kicker">A little soundtrack</div>
+  <h2>Songs That Remind Me of You</h2>
+  <p class="section-intro">Some songs just sound like you.</p>
+  <div id="songList" class="song-list"></div>
+  <div class="editbox">
+    <input id="songTitle" placeholder="Song title">
+    <input id="songArtist" placeholder="Artist">
+    <input id="songNote" placeholder="Why it reminds me of you">
+    <input id="songFile" placeholder="Audio filename (example: love.mp3)">
+    <button onclick="addSong()">Add Song</button>
+  </div>
+  <p class="audio-status">Main song: <b>It Might Be You</b>. Add the other song audio files to the repository using the filenames shown in the buttons if you want their Play buttons to work.</p>
+</section>
+
+<section id="seven"><div class="stars"></div><div class="content reveal center"><div class="kicker">A little milestone</div><h2>Seven Months With You</h2><div class="letter"><p id="sevenText">[Your seven-month message goes here.]</p></div><div class="editbox"><label>Your message</label><textarea id="sevenEdit" placeholder="Write your own message here..."></textarea><button class="btn" style="margin-top:12px" onclick="saveText('sevenText','sevenEdit')">Save ✦</button></div></div></section>
+
+<section id="poem"><div class="stars"></div><div class="content reveal center"><div class="kicker">One more surprise</div><h2>A Poem From Elle</h2><div class="letter"><p id="poemText">[Your poem will live here.]</p></div><div class="editbox"><label>Your poem</label><textarea id="poemEdit" placeholder="Keep this secret until you're ready..."></textarea><button class="btn" style="margin-top:12px" onclick="saveText('poemText','poemEdit')">Save ✦</button></div></div></section>
+
+<section id="wish"><div class="stars"></div><div class="content reveal center"><div class="kicker">From my heart</div><h2>One Last Wish</h2><div class="letter"><p id="wishText">[Your final birthday wish goes here.]</p></div><div class="editbox"><label>Your final wish</label><textarea id="wishEdit" placeholder="Write your own final wish here..."></textarea><button class="btn" style="margin-top:12px" onclick="saveText('wishText','wishEdit')">Save ✦</button></div></div></section>
+
+<section id="final"><div class="stars"></div><div id="fireworks"></div><div class="content center reveal"><div class="kicker">Before you go...</div><h2>Look up.</h2><div class="divider"></div><button class="btn" onclick="makeWish()">✦ Make a wish ✦</button><div class="letter" style="margin-top:30px"><p id="finalText">[Your final little message goes here.]</p></div><div class="editbox"><label>Your final little message</label><textarea id="finalEdit" placeholder="Something small and personal..."></textarea><button class="btn" style="margin-top:12px" onclick="saveText('finalText','finalEdit')">Save ✦</button></div><div style="margin-top:70px"><div class="subtitle">Happy Birthday, Seyn. ♡</div><div style="margin-top:10px;color:var(--gold);letter-spacing:.25em">E ♡ S</div><div class="finalline">See you in every sky.</div></div></div></section>
+<footer>Made with love by Elle ✦</footer>
+
+<audio id="music" loop preload="none"><source src="it-might-be-you.mp3" type="audio/mpeg"></audio>
+<script>
+const KEY = "seynBirthday2026";
+const photoFiles = ["IMG_6945.jpeg","IMG_6946.jpeg","IMG_6947.jpeg","IMG_6948.jpeg","IMG_6949.jpeg","IMG_6950.jpeg","IMG_6951.jpeg","IMG_6952.jpeg","IMG_6953.jpeg","IMG_6954.jpeg"];
+
+const defaults = {
+  reasons:["your eyes","your laughter","the way you love animals","I love you because it’s you"],
+  captions:["first kiss","first meeting after you confessed","you eating kimchi","one of my faves baby pic of you","you and the pride march cat hansel😚","one of my faves such a cutie","you spontaneously went here just because you missed me🥹","first “kiss”🙈","first cinema date after we dated","cute mo matulog🙈"],
+  songs:[
+    {title:"love",artist:"wave to earth",note:"",file:"love.mp3"},
+    {title:"intertwine ft. the ridleys",artist:"over october",note:"I remember you, us, and our love in this song",file:"intertwine-ft-the-ridleys.mp3"},
+    {title:"if only",artist:"dove cameron",note:"",file:"if-only.mp3"},
+    {title:"disney",artist:"Disney",note:"I hope when the magic all runs out you’ll still be with me",file:"disney.mp3"}
+  ],
+  seven:`7 months together, and only a lifetime to go. I love you forever & always. I’ll choose you every minute, hour, today, tomorrow, everyday, every month, and every year.`,
+  poem:`Kung mali ang ibigin ka,
+ buong puso kong tatanggapin,
+ at yayakapin ang parusang
+ipapataw nila sa akin.
+
+Kung mali ang ibigin ka,
+ buong tapang kong haharapin
+ang pagsiklab ng apoy
+at ang mapanghusgang salita.
+
+Iugnay man nila ang aking ngalan sa mangkukulam,
+tatanggapin ko iyon 
+nang walang pag aatubili,
+sapagkat kung ito ang kapalit 
+ng aking pagmamahal sa iyo,
+hindi ko ito kailanman ikahihiya.`,
+  wish:`I hope I get to celebrate more birthdays with you, may we stay together for as long as possible. I hope the distance does not hinder us from being together. I love you, and I hope your wishes do come true.`,
+  final:`I hope I get to celebrate more birthdays with you, may we stay together for as long as possible. I hope the distance does not hinder us from being together. I love you, and I hope your wishes do come true.`
+};
+
+let data;
+try { data = JSON.parse(localStorage.getItem(KEY)) || structuredClone(defaults); } catch(e) { data = structuredClone(defaults); }
+if(!data.reasons?.length) data.reasons = defaults.reasons.slice();
+if(!data.captions?.length) data.captions = defaults.captions.slice();
+if(!data.songs?.length) data.songs = defaults.songs.map(s=>({...s}));
+
+function save(){ localStorage.setItem(KEY, JSON.stringify(data)); }
+function esc(s){ return String(s).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+
+function renderReasons(){
+  document.getElementById("reasons").innerHTML = data.reasons.map(r=>`<li>${esc(r)}</li>`).join("");
+}
+function addReason(){
+  const i=document.getElementById("reasonInput");
+  if(!i.value.trim()) return;
+  data.reasons.push(i.value.trim()); save(); i.value=""; renderReasons();
+}
+
+function renderPhotos(){
+  const grid=document.getElementById("photoGrid");
+  grid.innerHTML=photoFiles.map((file,i)=>`<figure class="photo-card"><img src="${file}" alt="Memory ${i+1}" onerror="this.style.opacity='.35'"><figcaption><input class="caption-edit" value="${esc(data.captions[i] || `Memory ${i+1} ♡`)}" aria-label="Edit caption for memory ${i+1}" oninput="updateCaption(${i}, this.value)"></figcaption></figure>`).join("");
+}
+function updateCaption(i,value){ data.captions[i]=value; save(); }
+
+const mainAudio=document.getElementById("music");
+const selectedAudio=new Audio();
+selectedAudio.preload="auto";
+let mainTime=0;
+let mainWasPlaying=false;
+let selectedButton=null;
+
+function setButton(btn,label){ if(btn) btn.textContent=label; }
+function playMain(){
+  mainAudio.currentTime=mainTime || mainAudio.currentTime;
+  mainAudio.play().catch(()=>{});
+}
+function playSelected(song,btn){
+  if(selectedButton===btn && !selectedAudio.paused){
+    selectedAudio.pause();
+    setButton(btn,"Play");
+    if(mainWasPlaying) playMain();
+    selectedButton=null;
+    return;
+  }
+  if(!mainAudio.paused) { mainTime=mainAudio.currentTime; mainWasPlaying=true; mainAudio.pause(); }
+  else { mainWasPlaying=false; }
+  if(selectedButton) setButton(selectedButton,"Play");
+  selectedButton=btn;
+  setButton(btn,"Loading…");
+  selectedAudio.src=song.file;
+  selectedAudio.currentTime=0;
+  const p=selectedAudio.play();
+  if(p){ p.catch(()=>{ setButton(btn,"Add audio"); selectedButton=null; if(mainWasPlaying) playMain(); }); }
+  setButton(btn,"Pause");
+}
+selectedAudio.addEventListener("ended",()=>{
+  if(selectedButton) setButton(selectedButton,"Play");
+  selectedButton=null;
+  if(mainWasPlaying){ mainAudio.currentTime=mainTime; mainAudio.play().catch(()=>{}); }
+});
+
+function renderSongs(){
+  document.getElementById("songList").innerHTML=data.songs.map((s,i)=>`<div class="song-row"><div class="song-info"><div class="song-title">${esc(s.title)}</div><div class="song-note">${esc(s.artist)}${s.note?` · ${esc(s.note)}`:""}</div></div><button class="song-play" onclick='playSelected(data.songs[${i}],this)'>Play</button></div>`).join("");
+}
+function addSong(){
+  const title=document.getElementById("songTitle").value.trim();
+  const artist=document.getElementById("songArtist").value.trim();
+  const note=document.getElementById("songNote").value.trim();
+  const file=document.getElementById("songFile").value.trim();
+  if(!title) return;
+  data.songs.push({title,artist,note,file:file||`${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}.mp3`});
+  save(); ["songTitle","songArtist","songNote","songFile"].forEach(id=>document.getElementById(id).value=""); renderSongs();
+}
+
+function loadText(){
+  document.getElementById("sevenText").value=data.seven;
+  document.getElementById("poemText").value=data.poem;
+  document.getElementById("wishText").value=data.wish;
+  document.getElementById("finalText").value=data.final;
+}
+function saveText(key,id){ data[key]=document.getElementById(id).value; save(); }
+
+function startExperience(){
+  mainAudio.play().catch(()=>{});
+  document.getElementById("main").classList.add("entered");
+  document.getElementById("begin").style.display="none";
+}
+
+renderReasons(); renderPhotos(); renderSongs(); loadText();
+
+// Fireworks for the final scene
+const canvas=document.getElementById("fireworks");
+const ctx=canvas.getContext("2d");
+let sparks=[];
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight} resize(); addEventListener("resize",resize);
+function burst(x,y){for(let i=0;i<70;i++){const a=Math.random()*Math.PI*2,s=1+Math.random()*4;sparks.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:70+Math.random()*35})}}
+function fireworks(){ctx.clearRect(0,0,canvas.width,canvas.height); if(Math.random()<.045) burst(Math.random()*canvas.width,Math.random()*canvas.height*.55); sparks=sparks.filter(p=>p.life>0); sparks.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.life--;ctx.fillStyle=`rgba(255,255,255,${Math.max(0,p.life/100)})`;ctx.fillRect(p.x,p.y,2,2)});requestAnimationFrame(fireworks)} fireworks();
+</script>
+</body></html>
