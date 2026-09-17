@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Seyn ✦</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap');
+:root{--navy:#071426;--navy2:#0d2038;--sage:#9caf9a;--sage2:#b8c9b2;--gold:#d8b86a;--cream:#f7f1df;--muted:#b8c1c6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--cream);font-family:Montserrat,sans-serif;font-weight:300;overflow-x:hidden}
+section{min-height:100vh;padding:90px 7vw;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.stars,.stars:before,.stars:after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.9) 0 1px,transparent 1.5px);background-size:170px 170px;opacity:.45;animation:drift 35s linear infinite;pointer-events:none}.stars:before{background-size:97px 97px;opacity:.25;animation-duration:22s}.stars:after{background-size:250px 250px;opacity:.2;animation-duration:50s}@keyframes drift{to{transform:translateY(170px)}}
+.content{max-width:1000px;width:100%;position:relative;z-index:2}.center{text-align:center}.kicker{letter-spacing:.35em;text-transform:uppercase;font-size:.72rem;color:var(--gold);margin-bottom:18px}h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500}h1{font-size:clamp(3.5rem,10vw,8rem);line-height:.88;margin:0 0 24px}h2{font-size:clamp(2.6rem,6vw,5rem);margin:0 0 20px}.subtitle{font-family:Parisienne,cursive;font-size:clamp(1.5rem,3vw,2.4rem);color:var(--sage2);text-shadow:0 0 22px rgba(156,175,154,.22)}
+.btn{border:1px solid rgba(216,184,106,.7);background:rgba(216,184,106,.08);color:var(--cream);padding:14px 25px;border-radius:999px;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem;cursor:pointer;transition:.3s}.btn:hover{background:var(--gold);color:var(--navy);transform:translateY(-2px)}.divider{width:70px;height:1px;background:var(--gold);margin:28px auto}.hint{font-size:.72rem;letter-spacing:.12em;color:var(--muted);margin-top:18px}
+.letter{background:rgba(247,241,223,.055);border:1px solid rgba(216,184,106,.28);padding:clamp(28px,6vw,70px);border-radius:4px;box-shadow:0 20px 80px rgba(0,0,0,.25)}.letter p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.8;margin:0;white-space:pre-line}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:35px}.card{padding:28px;background:linear-gradient(145deg,rgba(156,175,154,.16),rgba(156,175,154,.055));border:1px solid rgba(184,201,178,.42);border-radius:8px;box-shadow:0 0 28px rgba(156,175,154,.055)}.card h3{color:var(--sage2);text-shadow:0 0 12px rgba(184,201,178,.4)}.card p{color:#d2d9d2;line-height:1.7;font-size:.9rem}
+.memories{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:35px}.photo-card{margin:0}.photo{aspect-ratio:1/1;background:rgba(255,255,255,.045);border:1px dashed rgba(216,184,106,.4);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.song-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}.song-info{flex:1;min-width:0}.song-title{font-family:"Cormorant Garamond",serif;font-size:1.5rem}.song-artist{display:block;color:var(--muted);font-size:.78rem;margin-top:3px}.song-note{display:block;color:var(--sage);font-size:.78rem;margin-top:7px;line-height:1.5}.song-play{border:1px solid rgba(216,184,106,.65);background:rgba(216,184,106,.08);color:var(--cream);border-radius:999px;padding:10px 16px;font:500 .68rem Montserrat,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap}.song-play:hover{background:var(--gold);color:var(--navy)}
+.memory-caption{margin-top:10px;color:var(--cream);font:500 13px Montserrat,sans-serif;line-height:1.5;text-align:center}
+#fireworks{position:absolute;inset:0;pointer-events:none;z-index:1}#fireworksCanvas{width:100%;height:100%;display:block}.finalline{font-family:Parisienne,cursive;font-size:clamp(1.8rem,4vw,3rem);color:var(--sage2);margin-top:35px}.capricorn-wrap{margin:28px auto 10px;max-width:430px;padding:20px 22px;border:1px solid rgba(184,201,178,.4);border-radius:14px;background:linear-gradient(145deg,rgba(156,175,154,.12),rgba(216,184,106,.035));box-shadow:0 0 35px rgba(156,175,154,.07)}.capricorn-title{font-family:"Cormorant Garamond",serif;font-size:1.45rem;color:var(--sage2);letter-spacing:.08em}.capricorn-sub{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-top:4px}.constellation{width:100%;height:auto;display:block;margin:8px auto}.constellation line{stroke:var(--sage2);stroke-width:1.2;opacity:.7}.constellation circle{fill:var(--cream);filter:drop-shadow(0 0 5px rgba(184,201,178,.9))}.cake-wrap{margin:28px auto 24px;text-align:center}.cake{position:relative;width:190px;height:125px;margin:0 auto 12px}.cake-top{position:absolute;left:20px;right:20px;top:35px;height:62px;border-radius:12px 12px 18px 18px;background:linear-gradient(#e8e1cf,#c7bfae);box-shadow:0 12px 25px rgba(0,0,0,.3)}.cake-top:before{content:"";position:absolute;left:0;right:0;top:0;height:20px;border-radius:12px 12px 10px 10px;background:var(--sage2);opacity:.9}.cake-base{position:absolute;left:30px;right:30px;top:83px;height:28px;border-radius:0 0 18px 18px;background:#b8aa8f}.candle{position:absolute;left:87px;top:8px;width:16px;height:38px;border-radius:5px;background:var(--gold);box-shadow:0 0 10px rgba(216,184,106,.35)}.flame{position:absolute;left:84px;top:-12px;width:22px;height:28px;background:#ffd875;border-radius:50% 50% 45% 45%;transform:rotate(3deg);box-shadow:0 0 20px rgba(255,216,117,.8);animation:flicker .7s ease-in-out infinite alternate}.flame:after{content:"";position:absolute;left:6px;top:7px;width:10px;height:15px;border-radius:50%;background:#fff5cf}@keyframes flicker{to{transform:rotate(-4deg) scale(.92);opacity:.88}}.cake.blown .flame{display:none}.cake.blown .candle{box-shadow:none}.blow-note{font-size:.78rem;color:var(--sage2);letter-spacing:.08em;margin-bottom:15px}.wish-button.hidden{display:none}footer{text-align:center;padding:20px;color:#71808d;font-size:.65rem;letter-spacing:.1em}.reveal{opacity:1;transform:none}
+@media(max-width:600px){section{padding:75px 6vw}.letter p{font-size:1.1rem}.song-row{gap:10px}.song-play{padding:9px 12px}}
+</style>
+</head>
+<body>
+
+<section id="opening"><div class="stars"></div><div class="content center reveal">
+<div class="kicker">December 31, 2026</div>
+<h1>Happy 21st Birthday, Seyn</h1>
+<div class="subtitle">To the person who calms my heart.</div>
+<div class="divider"></div>
+<button class="btn" onclick="startExperience()">✦ Begin ✦</button>
+<div class="hint" id="musicHint">turn your sound on ♫</div>
+</div></section>
+
+<section id="letter"><div class="stars"></div><div class="content reveal">
+<div class="kicker">A little something from me</div><h2>For you, Seyn.</h2>
+<div class="letter"><p>There’s so many words, yet I can’t seem to find anything that can describe what I feel for you. I love you seems like it’s not enough—it doesn’t capture the entirety of what I feel for you. Poetry can’t even describe how deep, and drowning this feeling is—and I don’t mean that in a bad way, because I know that even if I drown I would never dream or even think about wanting to rise for fresh air—as you are the only one I need to survive. I love you, more than words could ever describe, more than the feeling, more than the fights, more than the kisses, the hugs, and everything else. Because I love only you, with you everything doesn’t seem so bad. Happy 21st Birthday to you my wife, my home, my warmth, my person, the love of my life. I hope this day brings you joy, happiness, and warmth. May this day be as joyful as the color yellow, and not as blue as your favorite color. And once you figure out the dreams you’d like to achieve, may you achieve them with me beside you, I hope your wishes do come true if you have any. Thank you for the joy, warmth, peace, love, and everything that you bring and spread every day. I hope when you change and grow into the best, and better version of yourself I’m still by your side, may you continue to spread the joys and kindness your heart has. 사랑해요 🫶 I love you until the sun loses its light, until the stars stops shining, and until the moon rests its light. Thank you for existing, for your life, for your patience, for loving me. Enjoy your morning, and the rest of the day. 🫶</p></div>
+</div></section>
+
+<section id="reasons"><div class="stars"></div><div class="content reveal"><div class="kicker">A constellation of little things</div><h2>Reasons I Love You</h2><div class="capricorn-wrap"><div class="capricorn-title">Capricornus ♑</div><div class="capricorn-sub">For my December girl</div><svg class="constellation" viewBox="0 0 420 180" aria-label="Stylized Capricorn constellation"><line x1="45" y1="105" x2="105" y2="55"/><line x1="105" y1="55" x2="170" y2="82"/><line x1="170" y1="82" x2="235" y2="45"/><line x1="235" y1="45" x2="300" y2="70"/><line x1="300" y1="70" x2="365" y2="120"/><line x1="170" y1="82" x2="205" y2="135"/><circle cx="45" cy="105" r="3.5"/><circle cx="105" cy="55" r="4"/><circle cx="170" cy="82" r="3.5"/><circle cx="235" cy="45" r="4.5"/><circle cx="300" cy="70" r="3.5"/><circle cx="365" cy="120" r="4"/><circle cx="205" cy="135" r="3"/></svg></div><div class="grid" id="reasonGrid"></div>
+</div></section>
+
+<section id="memories"><div class="stars"></div><div class="content reveal"><div class="kicker">The moments I keep</div><h2>Our Memories</h2><p class="center" style="color:var(--muted)">Ten little memories I get to keep with you. ♡</p><div class="memories" id="memoryGrid"></div></div></section>
+
+<section id="songs"><div class="stars"></div><div class="content reveal"><div class="kicker">A little soundtrack</div><h2>Songs That Remind Me of You</h2><p class="center" style="color:var(--muted)">Some songs just sound like you.</p><div id="songList"></div>
+</div></section>
+
+<section id="seven"><div class="stars"></div><div class="content reveal center"><div class="kicker">A little milestone</div><h2>Seven Months With You</h2><div class="letter"><p id="sevenText">7 months together, and only a lifetime to go. I love you forever &amp; always. I’ll choose you every minute, hour, today, tomorrow, everyday, every month, and every year.</p></div></div></section>
+
+<section id="poem"><div class="stars"></div><div class="content reveal center"><div class="kicker">One more surprise</div><h2>A Poem From Elle</h2><div class="letter"><p id="poemText">Kung mali ang ibigin ka,
+buong puso kong tatanggapin,
+at yayakapin ang parusang
+ipapataw nila sa akin.
+
+Kung mali ang ibigin ka,
+buong tapang kong haharapin
+ang pagsiklab ng apoy
+at ang mapanghusgang salita.
+
+Iugnay man nila ang aking ngalan sa mangkukulam,
+tatanggapin ko iyon
+nang walang pag aatubili,
+sapagkat kung ito ang kapalit
+ng aking pagmamahal sa iyo,
+hindi ko ito kailanman ikahihiya.</p></div></div></section>
+
+<section id="wish"><div class="stars"></div><div class="content reveal center"><div class="kicker">From my heart</div><h2>One Last Wish</h2><div class="letter"><p id="wishText">I hope I get to celebrate more birthdays with you, may we stay together for as long as possible. I hope the distance does not hinder us from being together. I love you, and I hope your wishes do come true.</p></div></div></section>
+
+<section id="final"><div class="stars"></div><div id="fireworks"><canvas id="fireworksCanvas"></canvas></div><div class="content center reveal"><div class="kicker">Before you go...</div><h2>Look up.</h2><div class="divider"></div><div class="cake-wrap"><div class="cake" id="birthdayCake"><div class="flame" id="candleFlame"></div><div class="candle"></div><div class="cake-top"></div><div class="cake-base"></div></div><div class="blow-note" id="blowNote">Close your eyes, make a wish, and blow out the candle. ♡</div><button class="btn" id="blowButton" onclick="blowCandle()">✦ Blow out the candle ✦</button></div><button class="btn wish-button hidden" id="wishButton" onclick="makeWish()">✦ Make a wish ✦</button><div class="letter" style="margin-top:30px"><p id="finalText">Happy Birthday my beautiful wife, if there’s any wish that you think I could do please do tell. I’ll give you three wishes that I could grant. 🧞‍♀️</p></div><div style="margin-top:70px"><div class="subtitle">Happy Birthday, Seyn. ♡</div><div style="margin-top:10px;color:var(--gold);letter-spacing:.25em">E ♡ S</div><div class="finalline">See you in every sky.</div></div></div></section>
+<footer>Made with love by Elle ✦</footer>
+
+<audio id="music" loop preload="auto"><source src="it-might-be-you.mp3" type="audio/mpeg"><source src="it-might-be-you.mp3.mp3" type="audio/mpeg"></audio>
+<script>
+const photoFiles=['IMG_6945.jpeg','IMG_6946.jpeg','IMG_6947.jpeg','IMG_6948.jpeg','IMG_6949.jpeg','IMG_6950.jpeg','IMG_6951.jpeg','IMG_6952.jpeg','IMG_6953.jpeg','IMG_6954.jpeg'];
+const data={
+ reasons:['your eyes','your laughter','the way you love animals','I love you because it’s you','your smile','your warmth','your hair','your face','your lips','your heart','the kindness that you spread','your love','you','just because'],
+ captions:['first kiss','first meeting after you confessed','you eating kimchi','one of my faves baby pic of you','you and the pride march cat hansel😚','one of my faves such a cutie','you spontaneously went here just because🥹','first “kiss”🙈','first cinema date after we dated','cute mo matulog🙈'],
+ songs:[
+  {title:'love',artist:'wave to earth',note:'',file:'love-by-wave-to-earth.mp3'},
+  {title:'intertwine ft. the ridleys',artist:'over october',note:'I remember you, us, and our love in this song',file:'intertwine-ft-the-ridleys.mp3'},
+  {title:'if only',artist:'dove cameron',note:'I hope when the magic all runs out you’ll still be with me',file:'if-only-dove-cameron.mp3'}
+ ]
+};
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderReasons(){document.getElementById('reasonGrid').innerHTML=data.reasons.map(r=>`<div class="card"><h3>✦</h3><p>${esc(r)}</p></div>`).join('')}
+function renderPhotos(){const grid=document.getElementById('memoryGrid');grid.innerHTML=photoFiles.map((file,i)=>`<figure class="photo-card"><div class="photo"><img src="${file}" alt="Memory ${i+1}" onerror="this.style.opacity='.25'"></div><figcaption class="memory-caption">${esc(data.captions[i]||`Memory ${i+1} ♡`)}</figcaption></figure>`).join('')}
+const mainAudio=document.getElementById('music');const selectedAudio=new Audio();selectedAudio.preload='auto';let mainTime=0;let mainWasPlaying=false;let selectedButton=null;
+function startExperience(){mainAudio.play().then(()=>{document.getElementById('musicHint').textContent='music is playing ♫'}).catch(()=>{document.getElementById('musicHint').textContent='if music does not start, check the MP3 filename'});document.getElementById('opening').style.minHeight='88vh'}
+function playSelected(song,btn){if(selectedButton===btn&&!selectedAudio.paused){selectedAudio.pause();btn.textContent='Play';if(mainWasPlaying){mainAudio.currentTime=mainTime;mainAudio.play().catch(()=>{})}selectedButton=null;return}if(!mainAudio.paused){mainTime=mainAudio.currentTime;mainWasPlaying=true;mainAudio.pause()}else{mainWasPlaying=false}if(selectedButton)selectedButton.textContent='Play';selectedButton=btn;btn.textContent='Loading…';selectedAudio.src=song.file;selectedAudio.currentTime=0;selectedAudio.play().then(()=>{btn.textContent='Pause'}).catch(()=>{btn.textContent='Add audio';selectedButton=null;if(mainWasPlaying)mainAudio.play().catch(()=>{})})}
+selectedAudio.addEventListener('ended',()=>{if(selectedButton)selectedButton.textContent='Play';selectedButton=null;if(mainWasPlaying){mainAudio.currentTime=mainTime;mainAudio.play().catch(()=>{})}})
+function renderSongs(){document.getElementById('songList').innerHTML=data.songs.map((s,i)=>`<div class="song-row"><div class="song-info"><div class="song-title">${esc(s.title)}</div><span class="song-artist">${esc(s.artist)}</span>${s.note?`<span class="song-note">${esc(s.note)}</span>`:''}</div><button class="song-play" onclick="playSelected(data.songs[${i}],this)">Play</button></div>`).join('')}
+// Fireworks
+const canvas=document.getElementById('fireworksCanvas'),ctx=canvas.getContext('2d');let sparks=[],fireworksRunning=false;function resize(){canvas.width=innerWidth;canvas.height=document.getElementById('final').offsetHeight}resize();addEventListener('resize',resize);function burst(x,y){for(let i=0;i<90;i++){const a=Math.random()*Math.PI*2,s=1+Math.random()*4.5;sparks.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:65+Math.random()*45})}}function fireworks(){if(!fireworksRunning)return;ctx.clearRect(0,0,canvas.width,canvas.height);sparks=sparks.filter(p=>p.life>0);sparks.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.life--;ctx.fillStyle=`rgba(216,184,106,${Math.max(0,p.life/100)})`;ctx.fillRect(p.x,p.y,2.2,2.2)});if(sparks.length||fireworksRunning)requestAnimationFrame(fireworks)}function blowCandle(){const cake=document.getElementById('birthdayCake');cake.classList.add('blown');document.getElementById('blowButton').style.display='none';document.getElementById('blowNote').textContent='The candle is out. Now make your wish. ♡';document.getElementById('wishButton').classList.remove('hidden')}function makeWish(){if(fireworksRunning)return;fireworksRunning=true;document.getElementById('wishButton').textContent='✦ Wish made ✦';const final=document.getElementById('final');[0,450,900,1350,1800].forEach((delay,i)=>setTimeout(()=>burst(innerWidth*(.15+Math.random()*.7),final.offsetHeight*(.13+Math.random()*.34)),delay));setTimeout(()=>{fireworksRunning=false},2700);requestAnimationFrame(fireworks)}
+renderReasons();renderPhotos();renderSongs();loadText();
+</script>
+</body>
+</html>
